@@ -45,7 +45,15 @@ sudo apt install --assume-yes --fix-broken
 
 # Prompt user for CRP value
 read -p "Enter CRP value: " CRP
-
+echo "Finalizing"
+if [ "$Autostart" = true ]; then
+    mkdir -p "/home/$username/.config/autostart"
+    link="https://technical-dose.blogspot.com/"
+    colab_autostart="[Desktop Entry]\nType=Application\nName=Colab\nExec=sh -c 'sensible-browser $link'\nIcon=\nComment=Open a predefined notebook at session signin.\nX-GNOME-Autostart-enabled=true"
+    echo -e "$colab_autostart" | sudo tee "/home/$username/.config/autostart/colab.desktop"
+    sudo chmod +x "/home/$username/.config/autostart/colab.desktop"
+    sudo chown "$username:$username" "/home/$username/.config"
+fi
 sudo adduser "$username" chrome-remote-desktop
 command="$CRP --pin=$Pin"
 sudo su - "$username" -c "$command"
