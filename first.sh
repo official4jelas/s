@@ -45,11 +45,14 @@ sudo bash -c 'echo "exec /etc/X11/Xsession /usr/bin/xfce4-session" > /etc/chrome
 # Disable lightdm service
 log "Disabling lightdm service"
 sudo systemctl disable lightdm.service
+
 # Install Firefox ESR
 sudo apt update
 sudo add-apt-repository ppa:mozillateam/ppa
 sudo apt update
 sudo apt install firefox-esr -y
+
+sudo apt install virtualbox -y
 
 
 log "Installation completed successfully"
