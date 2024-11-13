@@ -54,6 +54,7 @@ if [ "$Autostart" = true ]; then
     sudo chmod +x "/home/$username/.config/autostart/colab.desktop"
     sudo chown "$username:$username" "/home/$username/.config"
 fi
+
 sudo adduser "$username" chrome-remote-desktop
 command="$CRP --pin=$Pin"
 sudo su - "$username" -c "$command"
