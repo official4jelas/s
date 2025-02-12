@@ -2,7 +2,7 @@
 
 # Set default username and password
 username="user"
-password="root"
+password="1"
 
 # Set default CRP value
 CRP=""
