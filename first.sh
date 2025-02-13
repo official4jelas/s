@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Set default values
-username="user"
+username="root"
 password="1234"
 chrome_remote_desktop_url="https://dl.google.com/linux/direct/chrome-remote-desktop_current_amd64.deb"
 
